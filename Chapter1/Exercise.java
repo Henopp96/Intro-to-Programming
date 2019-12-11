@@ -1,3 +1,10 @@
+/*
+Cody Henopp
+12/10/19
+
+This program solves the Cramer's 2X2 equation.
+*/
+
 package demo;
 
 public class Exercise {
