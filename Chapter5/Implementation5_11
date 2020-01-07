@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+/*
+ * Cody Henopp
+ * 01/06/2020
+ * 
+ * This program solves numbers divisible by 5 or 6 not both.
+ */
+public class Implementation5_11 {
+	public static void main(String[] args) {
+
+
+		Scanner input = new Scanner(System.in);
+		
+		final int Numbers_Per_Line = 10;
+		double count = 100;
+		int count2 = 0;
+		
+		System.out.println ("Counting from 100 - 200");
+		System.out.println ("Divisible by 5 or 6, but not 5 and 6");
+		
+		System.out.println("\n———————————————————————————————————————");
+		System.out.println("\n");
+		
+		while (count < 200) {
+			count = count + 5;
+			count2++;
+		}
+		System.out.println(count);
+			
+		}
+	
+	}
