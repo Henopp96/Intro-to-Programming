@@ -1,0 +1,39 @@
+import java.util.Scanner;
+/*
+ * Cody Henopp
+ * 01/07/2020
+ * 
+ * This program counts the vowels and consonants in a string.
+ */
+public class Implementation5_49 {
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+
+
+		System.out.println("Enter any word or sentence: ");
+		String Word = input.nextLine();
+
+		int Vowel = 0;
+		int Consonant = 0;
+		Word = Word.toUpperCase();
+
+		for(int let = 0; let < Word.length(); let++)
+		{
+			char vow = Word.charAt(let);
+			if(vow == 'a' || vow == 'e' || vow == 'i'
+					|| vow == 'o' || vow == 'u') {
+				Vowel++;
+			}
+			else if(vow >= 'a' && vow <= 'z') {
+				Consonant++;
+			}
+		}
+
+		System.out.println("Vowels: " + Vowel++);
+		System.out.println("Consonants: " + Consonant++);
+
+	}
+
+
+}
