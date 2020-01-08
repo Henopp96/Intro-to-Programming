@@ -21,11 +21,13 @@ public class Implementation5_49 {
 		for(int let = 0; let < Word.length(); let++)
 		{
 			char vow = Word.charAt(let);
-			if(vow == 'a' || vow == 'e' || vow == 'i'
-					|| vow == 'o' || vow == 'u') {
+			if
+			(vow == 'A' || vow == 'E' || vow == 'I'
+			|| vow == 'O' || vow == 'U') {
 				Vowel++;
 			}
-			else if(vow >= 'a' && vow <= 'z') {
+			else if 
+			(vow >= 'A' && vow <= 'Z') {
 				Consonant++;
 			}
 		}
