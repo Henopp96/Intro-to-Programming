@@ -1,0 +1,29 @@
+import java.util.Scanner;
+/*
+ * Cody Henopp
+ * 01/08/2020
+ * 
+ * This program displays a matrix for the given number entered.
+ */
+public class Implementation6_17 {
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+
+
+		System.out.print("Enter n: ");
+		int line = input.nextInt();
+
+		printMatrix(line);
+	}
+	public static void printMatrix(int n) {
+		for ( int horiz = 0; horiz < n; horiz++){
+			for (int vert = 0; vert < n; vert++) {
+				System.out.printf("%1d ", (int) (Math.random() * 2));
+
+			}
+			System.out.print("\n");
+
+		}
+	}
+}
