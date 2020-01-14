@@ -1,0 +1,45 @@
+import java.util.Scanner;
+/*
+ * Cody Henopp
+ * 01/13/2020
+ * 
+ * This program returns if the number is a Palindrome or not.
+ */
+public class Implementation6_3 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+
+		System.out.print("Enter any integer: ");
+		int line = input.nextInt();
+		
+		if (isPalindrome(line)) {
+			System.out.print(line + " is a palindrome.");
+		}
+		else {
+			System.out.print(line + " is not a palindrome.");
+		}
+		System.out.print("\nReverse order is: " + reverse(line));
+
+
+	}
+	public static int reverse(int number) {
+		int remainder = 0;
+		while (number != 0) {
+			remainder = remainder * 10 + number % 10;
+			number = number / 10;
+		}
+		return remainder;
+	}
+	public static boolean isPalindrome(int number) {
+
+		if (number == reverse(number)) {
+			return true;
+		}
+		return false;
+
+
+
+	}
+
+}
