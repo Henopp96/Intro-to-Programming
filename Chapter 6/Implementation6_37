@@ -1,0 +1,31 @@
+import java.util.Scanner;
+/*
+ * Cody Henopp
+ * 01/13/2020
+ * 
+ * This program returns a string for the number with the correct width.
+ */
+public class Implementation6_37 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.print("Enter in number: ");
+		String number = input.nextLine();
+		System.out.print("Enter in width: ");
+		int width = input.nextInt();
+		if (number.length() >= width) {
+			System.out.print(number);
+		}
+		else {
+			System.out.printf("%0", width - number.length());
+		}
+		
+	}
+	public static String format(int number, int width) {
+		Scanner input = new Scanner(System.in);
+String num = input.nextLine();
+		
+		return null;
+	}
+}
