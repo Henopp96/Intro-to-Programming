@@ -9,23 +9,24 @@ public class Implementation6_37 {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		
+
 		System.out.print("Enter in number: ");
-		String number = input.nextLine();
+		int number = input.nextInt();
 		System.out.print("Enter in width: ");
 		int width = input.nextInt();
-		if (number.length() >= width) {
-			System.out.print(number);
-		}
-		else {
-			System.out.printf("%0", width - number.length());
-		}
-		
+		String GoToString = format(number, width);
+
+		System.out.print(GoToString);
 	}
+
 	public static String format(int number, int width) {
-		Scanner input = new Scanner(System.in);
-String num = input.nextLine();
-		
-		return null;
+		StringBuilder s = new StringBuilder(number + "");
+		if (s.length() < width) {
+			int zero = width - s.length();
+			for (int i = 0; i < zero; i++) {
+				s.insert(0, "0");
+			}
+		}
+		return s.toString();
 	}
 }
