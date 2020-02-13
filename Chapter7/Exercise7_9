@@ -10,10 +10,8 @@ public class Exercise7_9 {
 
 		Scanner input = new Scanner(System.in);
 
-		double [] numbers = new double[10];
-
 		System.out.println("Enter 10 numbers separated by a space: ");
-
+		double [] numbers = new double[10];
 		for (int line = 0; line < numbers.length; line++) {
 			numbers[line] = input.nextDouble();
 		}
