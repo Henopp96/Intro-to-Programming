@@ -1,0 +1,34 @@
+import java.util.Scanner;
+/*
+ * Cody Henopp
+ * 02/13/2020
+ * 
+ * This program shows the minimum value entered.
+ */
+public class Exercise7_9 {
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+
+		double [] numbers = new double[10];
+
+		System.out.println("Enter 10 numbers separated by a space: ");
+
+		for (int line = 0; line < numbers.length; line++) {
+			numbers[line] = input.nextDouble();
+		}
+
+		System.out.println("The minimum number is: " + MinNum(numbers));	
+	}
+
+	public static double MinNum(double[] array) {
+		double MinNum = array[0];
+
+		for (double line: array) {
+
+			if (line < MinNum)
+				MinNum = line;
+		}
+		return MinNum;
+	}
+}
