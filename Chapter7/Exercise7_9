@@ -14,19 +14,21 @@ public class Exercise7_9 {
 		double [] numbers = new double[10];
 		for (int line = 0; line < numbers.length; line++) {
 			numbers[line] = input.nextDouble();
-		}
 
+		}
+		
 		System.out.println("The minimum number is: " + MinNum(numbers));	
+
 	}
 
 	public static double MinNum(double[] array) {
-		double MinNum = array[0];
-		double [] numbers = new double[0];
-		for (int line = 0; line < numbers.length; line++) {
+		double min = 100;
+		for (int line = 0; line < array.length; line++) {
 
-			if (line < MinNum)
-				MinNum = line;
+			if (array[line] < min) { 
+				min = array[line];
+			}
 		}
-		return MinNum;
+		return min;
 	}
 }
