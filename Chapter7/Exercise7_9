@@ -21,8 +21,8 @@ public class Exercise7_9 {
 
 	public static double MinNum(double[] array) {
 		double MinNum = array[0];
-
-		for (double line: array) {
+		double [] numbers = new double[0];
+		for (int line = 0; line < numbers.length; line++) {
 
 			if (line < MinNum)
 				MinNum = line;
