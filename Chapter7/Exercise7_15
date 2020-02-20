@@ -3,7 +3,7 @@ import java.util.Scanner;
  * Cody Henopp
  * 02/18/2020
  * 
- * This program eliminates and duplicates in the array.
+ * This program eliminates any duplicates in the array.
  */
 public class Exercise7_15 {
 	public static void main(String[] args) {
@@ -15,15 +15,23 @@ public class Exercise7_15 {
 		for (int line = 0; line < numbers.length; line++) {
 			numbers[line] = input.nextInt();
 		}
-		System.out.println("Array without Duplicates: " + eliminateDuplicates(numbers));
+		System.out.println("Array without duplicates: " + eliminateDuplicates(numbers));
 	}
 
 	public static int [] eliminateDuplicates(int[] list) {
-		int [] duplicate = new int [100];
-		for (int line = 0; line < list.length; line++) 
-			duplicate[list[line]-'1']++;
+		
+		for (int line = 0; line < list.length; line++) {  
+			double duplicate = 1;
+			if (list[line] == duplicate) {
+				line = 0;
+			}
+				System.out.println("array without duplicates: " +  list[line]);
+		}
 
-		return duplicate;
+		
+
+
+		return list;
 
 	}
 
