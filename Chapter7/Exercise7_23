@@ -1,0 +1,39 @@
+import java.util.Scanner;
+/*
+ * Cody Henopp
+ * 02/26/2020
+ * 
+ * This program show the open lockers.
+ */
+public class Exercise7_23 {
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		int [] lockers = new int [100];
+		int [] students = new int [100];
+		for (int line = 0; line < lockers.length; line++) {
+			lockers[line] = ((int) Math.random() );
+			for (int i = 0; i < students.length; i++) {
+				students[i] = ((int) Math.random() * 101);
+			}
+		}
+		System.out.println("The open lockers are: " + openlockers(lockers));
+	}
+	public static int [] openlockers(int [] students) {
+		int [] lockers = new int [100];
+		int change = 0;
+		boolean flag = false;
+		for (int line = 0; line < students.length; line++) {
+			for (int i = 0; i < lockers.length; i++) {
+				if (students[line] == lockers[i]) {
+					flag = true;
+				}
+				if (flag == false) {
+					
+				}
+			}
+			
+		}
+		return lockers;
+	}
+}
