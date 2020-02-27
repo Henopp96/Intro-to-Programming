@@ -1,0 +1,31 @@
+import java.util.Scanner;
+/*
+ * Cody Henopp
+ * 02/26/2020
+ * 
+ * This program show the open lockers.
+ */
+public class Exercise8_5 {
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		double [][] a = new double [3][3];
+		double [][] b = new double [3][3];
+		System.out.print(addMatrix(a,b));
+	}
+	
+	public static double[][] addMatrix(double[][] a, double[][] b){
+		double [][] matrix = new double [3][3];
+		double [][] c;
+		double i;
+		double j;
+		for (int row = 0; row < matrix.length; row++) {
+			for (int column = 0; column < matrix[row].length; column++) {
+				a[row][column] = (double)(Math.random() * 10.0);
+				b[row][column] = (double)(Math.random() * 10.0);
+			}
+
+		}
+	return matrix;
+	}
+}
