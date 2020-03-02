@@ -1,0 +1,42 @@
+import java.util.Scanner;
+/*
+ * Cody Henopp
+ * 02/26/2020
+ * 
+ * This program adds the two matrixes and shows result in third matrix.
+ */
+public class Exercise8_37 {
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		String [][] statesandcapitals = {{"alabama","montgomery"},{"alaska","juneau"},
+				{"arizona","phoenix"},{"arkansas","little rock"},
+				{"california","sacramento"},{"colorado","denver"},
+				{"connecticut","hartford"},{"delaware","dover"},
+				{"florida","tallahassee"},{"georgia","atlanta"}};
+		System.out.println("What is the capital of " + statesandcapitals);
+		answer(statesandcapitals);
+		
+	}
+	
+	public static void answer(String[][] capitalsandstates){
+		Scanner input = new Scanner(System.in);
+		boolean flag = true;
+		String [][] answer = new String [10][10]; 
+		for (int states = 0; states < answer.length; states++) {
+			for (int capitals = 0; states < answer[states].length; capitals++) {
+				answer[states][capitals] = input.toString();
+			
+				if (answer[states][capitals] == capitalsandstates[states][capitals]) {
+					flag = true;
+				}
+				if (flag == false) {
+					System.out.println("Your answer is incorrect.");
+				}
+			}
+			System.out.println("What is the capital of " + answer[states]);
+		}
+	
+	}
+
+}
