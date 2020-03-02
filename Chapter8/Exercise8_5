@@ -3,29 +3,34 @@ import java.util.Scanner;
  * Cody Henopp
  * 02/26/2020
  * 
- * This program show the open lockers.
+ * This program adds the two matrixes and shows result in third matrix.
  */
 public class Exercise8_5 {
 	public static void main(String[] args) {
 
 		Scanner input = new Scanner(System.in);
-		double [][] a = new double [3][3];
-		double [][] b = new double [3][3];
-		System.out.print(addMatrix(a,b));
+		double [][] a = {{1,2,3}, {4,5,6}, {7,8,9}};
+		double [][] b = {{0,2,4}, {1,4.5,2.2}, {1.1,4.3,5.2}};
+		
+		double [][] c = addMatrix(a,b);
+		for (int row = 0; row < c.length; row++) {
+			for (int column = 0; column < c[row].length; column++) {
+
+				System.out.print(c[row][column] + " ");
+			}
+			System.out.println();
+		}
 	}
 	
 	public static double[][] addMatrix(double[][] a, double[][] b){
 		double [][] matrix = new double [3][3];
-		double [][] c;
-		double i;
-		double j;
 		for (int row = 0; row < matrix.length; row++) {
 			for (int column = 0; column < matrix[row].length; column++) {
-				a[row][column] = (double)(Math.random() * 10.0);
-				b[row][column] = (double)(Math.random() * 10.0);
-			}
+				matrix[row][column] = a[row][column] + b[row][column];
 
+			}
 		}
 	return matrix;
+	
 	}
 }
