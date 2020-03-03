@@ -1,9 +1,9 @@
 import java.util.Scanner;
 /*
  * Cody Henopp
- * 02/26/2020
+ * 03/03/2020
  * 
- * This program adds the two matrixes and shows result in third matrix.
+ * This program tells you what the capital of each state is and whether you are correct or not.
  */
 public class Exercise8_37 {
 	public static void main(String[] args) {
@@ -14,29 +14,31 @@ public class Exercise8_37 {
 				{"california","sacramento"},{"colorado","denver"},
 				{"connecticut","hartford"},{"delaware","dover"},
 				{"florida","tallahassee"},{"georgia","atlanta"}};
-		System.out.println("What is the capital of " + statesandcapitals);
-		answer(statesandcapitals);
 		
+		answer(statesandcapitals);
 	}
 	
-	public static void answer(String[][] capitalsandstates){
+	public static void answer(String[][] answer){
 		Scanner input = new Scanner(System.in);
-		boolean flag = true;
-		String [][] answer = new String [10][10]; 
-		for (int states = 0; states < answer.length; states++) {
-			for (int capitals = 0; states < answer[states].length; capitals++) {
-				answer[states][capitals] = input.toString();
-			
-				if (answer[states][capitals] == capitalsandstates[states][capitals]) {
-					flag = true;
+		String in;
+		int correct = 0;
+		
+			for (int capitals = 0; capitals < answer.length; capitals++) {
+				System.out.println("What is the capital of " + answer[capitals][0]);
+				in = input.nextLine();
+				if (answer[capitals][1].equalsIgnoreCase(in)) {
+					correct++;
+					System.out.println("You are correct!");
 				}
-				if (flag == false) {
+				else {
 					System.out.println("Your answer is incorrect.");
 				}
+				
 			}
-			System.out.println("What is the capital of " + answer[states]);
-		}
-	
+			
+		
+		System.out.println("Total number correct " + correct );
 	}
+	
 
 }
