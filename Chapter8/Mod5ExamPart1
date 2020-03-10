@@ -238,11 +238,6 @@ class Mod5ExamPart1 {
 
 		int att[][] = new int [5][5];
 		int att1[][] = new int [5][5];
-		int att2[][] = new int [5][5];
-		int att3[][] = new int [5][5];
-		int att4[][] = new int [5][5];
-		int att5[][] = new int [5][5];
-		int att6[][] = new int [5][5];
 		int days = 0;
 
 
@@ -304,8 +299,8 @@ class Mod5ExamPart1 {
 		}
 		for (int r = 0; r < att.length; r++) {
 			for (int c = 0; c < att[r].length; c++) {
-				att6[r][c] = att[r][c]++;
-				System.out.print(att6[r][c] + " ");
+				att1[r][c] = att[r][c]++;
+				System.out.print(att1[r][c] + " ");
 			}
 			System.out.println();
 		}
