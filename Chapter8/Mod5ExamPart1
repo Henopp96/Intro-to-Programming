@@ -20,7 +20,7 @@ class Mod5ExamPart1 {
 
 		int user = 0;
 
-		Double [] scores = {70.11, 46.33, 50.54, 94.66, 74.40, 64.12, 84.07, 63.50, 91.12, 44.74, 74.88, 41.83, 84.62, 67.08, 57.53, 92.01, 66.11, 88.10, 69.75, 66.54, 83.57, 49.31, 69.71, 45.15, 53.57};
+		double [] scores = new double [25];
 
 
 
@@ -57,7 +57,7 @@ class Mod5ExamPart1 {
 		else {
 
 			trackAtt();
-			
+
 
 		}
 
@@ -77,7 +77,8 @@ class Mod5ExamPart1 {
 
 	 * Example:
 
-	 *     Input: 70.11 46.33 50.54 94.66 74.40 64.12 84.07 63.50 91.12 44.74 74.88 41.83 84.62 67.08 57.53 92.01 66.11 88.10 69.75 66.54 83.57 49.31 69.71 45.15 53.57
+	 *     Input: 70.11 46.33 50.54 94.66 74.40 64.12 84.07 63.50 91.12 44.74 74.88 41.83 84.62 67.08 
+	 *     			57.53 92.01 66.11 88.10 69.75 66.54 83.57 49.31 69.71 45.15 53.57
 
 	 *
 
@@ -97,33 +98,25 @@ class Mod5ExamPart1 {
 
 	 */
 
-	public static void printExam(Double [] scores) {
+	public static void printExam(double [] scores) {
 
 		Scanner input = new Scanner(System.in);
 
-
-
-
-
 		int letterA = 0;
-
 		int letterB = 0;
-
 		int letterC = 0;
-
 		int letterD = 0;
-
 		int letterF = 0;
 
-		Double average = 0.0;
 
-		Double sum = 0.0;
+		double average = 0.0;
 
-		System.out.print("Grades are: ");
+		double sum = 0.0;
+
+		System.out.print("Input grades here: ");
 
 		for (int answers = 0; answers < scores.length; answers++) {
-
-			System.out.print(scores[answers] + " ");
+			scores[answers] = input.nextDouble();
 
 			sum += scores[answers];
 
@@ -246,9 +239,13 @@ class Mod5ExamPart1 {
 		int att[][] = new int [5][5];
 		int att1[][] = new int [5][5];
 		int att2[][] = new int [5][5];
+		int att3[][] = new int [5][5];
+		int att4[][] = new int [5][5];
+		int att5[][] = new int [5][5];
+		int att6[][] = new int [5][5];
 		int days = 0;
 
-		
+
 
 
 
@@ -289,30 +286,31 @@ class Mod5ExamPart1 {
 				System.out.println("\nDay " + (d+1));
 
 				System.out.print("Enter 5 numbers for row " + (r+1) + " (1 = absent, 0 = present): ");
-				
+
 
 				for (int c = 0; c < att[r].length; c++) {
-					
-					att[r][c] = input.nextInt();
-				}
-			
+
+					if (d >= 0) {
+						att[r][c] = input.nextInt() + att[r][c];
+					}
+
+				}	
 
 			}
-			
-			
-			
-			
+
+
+
+
 		}
 		for (int r = 0; r < att.length; r++) {
 			for (int c = 0; c < att[r].length; c++) {
-				
-				System.out.print(att2[r][c] + " ");
+				att6[r][c] = att[r][c]++;
+				System.out.print(att6[r][c] + " ");
 			}
 			System.out.println();
 		}
-		}
-		
-		// Display seating chart showing number of absences
-
 	}
 
+	// Display seating chart showing number of absences
+
+}
