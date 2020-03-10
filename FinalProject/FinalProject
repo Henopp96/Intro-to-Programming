@@ -1,0 +1,48 @@
+import java.util.Scanner;
+/*
+ * Author: Cody Henopp
+ * 
+ * Date: 03/10/2020
+ * 
+ * 
+ */
+class FinalProject {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		String [][] table = new String [6][6];
+		System.out.println("There is one ship that is a 3X1. Find it.");
+		placement(table);
+		for (int i = 0; i < table.length; i++) {
+			for (int j = 0; j < table.length; j++) {
+				table[i][j] = "[]";
+				System.out.print(table[i][j] + " ");
+			}
+			System.out.println();
+			printGrid(table);
+		}
+
+	}
+	public static String [][] printGrid(String [][] table) {
+
+		for (int i = 0; i < table.length; i++) {
+			for (int j = 0; j < table.length; j++) {
+			}
+		}
+		return table;
+	}
+	public static void placement(String[][] layout) {
+		Scanner input = new Scanner(System.in);
+		for (int i = 0; i < layout.length; i++) {
+			for (int j = 0; j < layout.length; j++) {
+				System.out.println("Enter a ");
+				if (layout[i][j] == layout[0][0]) {
+					layout[0][0] = "*";
+				}
+				
+				
+			}
+		}
+	}
+}
