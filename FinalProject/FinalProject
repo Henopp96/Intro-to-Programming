@@ -12,8 +12,10 @@ class FinalProject {
 
 		Scanner input = new Scanner(System.in);
 		String [][] table = new String [6][6];
-		System.out.println("There is one ship that is a 3X1. Find it.");
-		placement(table);
+
+		System.out.println("First player enter location for a 3X1 ship that is horizontal only: ");
+		ship(table);
+
 		for (int i = 0; i < table.length; i++) {
 			for (int j = 0; j < table.length; j++) {
 				table[i][j] = "[]";
@@ -32,16 +34,25 @@ class FinalProject {
 		}
 		return table;
 	}
-	public static void placement(String[][] layout) {
+	public static void shooter(String[][] layout) {
 		Scanner input = new Scanner(System.in);
-		for (int i = 0; i < layout.length; i++) {
-			for (int j = 0; j < layout.length; j++) {
-				System.out.println("Enter a ");
-				if (layout[i][j] == layout[0][0]) {
-					layout[0][0] = "*";
-				}
-				
-				
+		System.out.println("Second player there is one ship that is a 3X1. Find it.");
+		int total = 0;
+		String miss = "!";
+		String shot = "*";
+		while(total < 36) {
+			System.out.println("Enter a row for shot.");
+			int row = input.nextInt();
+			System.out.println("Enter a column for shot.");
+			int col = input.nextInt();
+		}
+		printGrid(layout);
+	}
+	public static void ship(String[][] placement) {
+	String [][] ship = new String[6][6];
+		for (int row = 0; row < placement.length; row++) {
+			for (int col = 0; col < placement[row].length; col++) {
+				placement[row][col] = (char.random());
 			}
 		}
 	}
