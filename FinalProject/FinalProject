@@ -1,59 +1,140 @@
 import java.util.Scanner;
+
 /*
+
  * Author: Cody Henopp
+
  * 
+
  * Date: 03/10/2020
+
  * 
+
  * 
+
  */
+
 class FinalProject {
+
+
 
 	public static void main(String[] args) {
 
+
+
 		Scanner input = new Scanner(System.in);
+
 		String [][] table = new String [6][6];
 
-		System.out.println("First player enter location for a 3X1 ship that is horizontal only: ");
+		for (int i = 0; i < table.length; i++) {
+
+			for (int j = 0; j < table[i].length; j++) {
+
+				table[i][j] = "[]";
+
+
+			}
+
+
+
+
+		}
+
 		ship(table);
 
+	}
+
+	public static void printGrid(String [][] table) {
+
+
+
 		for (int i = 0; i < table.length; i++) {
+
 			for (int j = 0; j < table.length; j++) {
-				table[i][j] = "[]";
 				System.out.print(table[i][j] + " ");
 			}
 			System.out.println();
-			printGrid(table);
 		}
 
-	}
-	public static String [][] printGrid(String [][] table) {
 
-		for (int i = 0; i < table.length; i++) {
-			for (int j = 0; j < table.length; j++) {
-			}
-		}
-		return table;
+
+		shooter(table);
 	}
+
 	public static void shooter(String[][] layout) {
+
 		Scanner input = new Scanner(System.in);
+
 		System.out.println("Second player there is one ship that is a 3X1. Find it.");
+
 		int total = 0;
+		int count = 0;
+
 		String miss = "!";
+
 		String shot = "*";
+
 		while(total < 36) {
+
 			System.out.println("Enter a row for shot.");
+
 			int row = input.nextInt();
+
 			System.out.println("Enter a column for shot.");
+
 			int col = input.nextInt();
-		}
-		printGrid(layout);
-	}
-	public static void ship(String[][] placement) {
-	String [][] ship = new String[6][6];
-		for (int row = 0; row < placement.length; row++) {
-			for (int col = 0; col < placement[row].length; col++) {
-				placement[row][col] = (char.random());
+
+			if (layout[row][col].equalsIgnoreCase("[]")) {
+				layout[row][col] = shot;
+				count++;
+
+			}
+			else {
+				layout[row][col] = miss;
+			}
+			total++;
+			printGrid(layout);
+			if (count == 3) {
+				System.out.println("You won!");
 			}
 		}
+
+
+
+
 	}
+
+	public static void ship(String[][] placement) {
+		Scanner input = new Scanner(System.in);
+		int total = 0;
+
+		String turn = "[]";
+		System.out.println("First player enter location for a 3X1 ship that is horizontal or vertical only: (all next to each other)");
+		while (total <= 2) {
+
+
+			System.out.println("Please enter a row for placement");
+
+			int row = input.nextInt();
+
+			System.out.println("Please enter a column for placement");
+
+			int col = input.nextInt();
+
+			placement[row][col] = turn;
+
+			total++;
+
+			if(turn.equalsIgnoreCase("[]")) {
+
+				turn = "[]";
+
+			}
+
+
+		}
+		printGrid(placement);
+
+	}
+
 }
