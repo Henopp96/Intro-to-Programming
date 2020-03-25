@@ -14,7 +14,8 @@ import java.util.Scanner;
  * 		then read them in the shooter array from the ship array. If I make the brackets into 0's then I will have it print with 
  * 		0's where the ship is located and I can easily tell the program that if it is a 0 then it is a hit and if it is a bracket
  * 		then it is a miss. I am just having problems with keeping the ship as a bracket and then later being able to tell the 
- * 		difference of the brackets where the ship is located and the brackets of the rest of the matrix. 
+ * 		difference of the brackets where the ship is located and the brackets of the rest of the matrix. You can see that in my
+ 		other program FinalProject2 that it will then read where the ship is.
 
  */
 
