@@ -10,7 +10,11 @@ import java.util.Scanner;
 
  * 
 
- * 
+ * Comments: I am having problems with storing where the ship is located and keeping it in the new matrix so that I can 
+ * 		then read them in the shooter array from the ship array. If I make the brackets into 0's then I will have it print with 
+ * 		0's where the ship is located and I can easily tell the program that if it is a 0 then it is a hit and if it is a bracket
+ * 		then it is a miss. I am just having problems with keeping the ship as a bracket and then later being able to tell the 
+ * 		difference of the brackets where the ship is located and the brackets of the rest of the matrix. 
 
  */
 
@@ -84,7 +88,12 @@ class FinalProject {
 
 			int col = input.nextInt();
 
-			if (layout[row][col].equalsIgnoreCase("[]")) {
+			if (layout[row][col].equalsIgnoreCase("[]")) { 
+				
+				// I would like to know what I could do to this line to make it so it doesn't
+				// just read the "[]" I want to read where the previously entered ship is located and I don't know how to read the previous
+				// input instead of just reading what is printed.
+				
 				layout[row][col] = shot;
 				count++;
 
@@ -125,7 +134,11 @@ class FinalProject {
 
 			total++;
 
-			if(turn.equalsIgnoreCase("[]")) {
+			if(turn.equalsIgnoreCase("[]")) { 
+				
+				// When I change the "[]" to a "0" throughout the program so the ship is actually visible
+				// I can make it so it will read where the ship is and know whether it hit or missed but I need to keep the "[]" so it
+				// blends in with the rest of the matrix.
 
 				turn = "[]";
 
