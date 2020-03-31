@@ -10,13 +10,6 @@ import java.util.Scanner;
 
  * 
 
- * Comments: I am having problems with storing where the ship is located and keeping it in the new matrix so that I can 
- * 		then read them in the shooter array from the ship array. If I make the brackets into 0's then I will have it print with 
- * 		0's where the ship is located and I can easily tell the program that if it is a 0 then it is a hit and if it is a bracket
- * 		then it is a miss. I am just having problems with keeping the ship as a bracket and then later being able to tell the 
- * 		difference of the brackets where the ship is located and the brackets of the rest of the matrix. You can see that in my
- 		other program FinalProject2 that it will then read where the ship is.
-
  */
 
 class FinalProject {
@@ -30,6 +23,29 @@ class FinalProject {
 		Scanner input = new Scanner(System.in);
 
 		String [][] table = new String [6][6];
+		String [][] ship = new String [6][6];
+		int total = 0;
+		/*System.out.println("First player enter location for a 3X1 ship that is horizontal or vertical only: (all next to each other)");
+
+		for (int row = 0; row < ship.length; row++) {
+			for (int col = 0; col < ship[row].length; col++) {
+
+				while (total <= 2) {
+
+
+
+					System.out.println("Please enter a row for placement");
+
+					row = input.nextInt();
+
+					System.out.println("Please enter a column for placement");
+
+					col = input.nextInt();
+					
+					total++;
+				}
+			}
+		}*/
 
 		for (int i = 0; i < table.length; i++) {
 
@@ -49,7 +65,7 @@ class FinalProject {
 
 	}
 
-	public static void printGrid(String [][] table) {
+	public static void printGrid(String [][] table, String[][] ship) {
 
 
 
@@ -63,10 +79,10 @@ class FinalProject {
 
 
 
-		shooter(table);
+		shooter(table, ship);
 	}
 
-	public static void shooter(String[][] layout) {
+	public static void shooter(String[][] layout, String[][] ship) {
 
 		Scanner input = new Scanner(System.in);
 
@@ -81,6 +97,7 @@ class FinalProject {
 
 		while(total < 36) {
 
+
 			System.out.println("Enter a row for shot.");
 
 			int row = input.nextInt();
@@ -89,26 +106,31 @@ class FinalProject {
 
 			int col = input.nextInt();
 
-			if (layout[row][col].equalsIgnoreCase("[]")) { 
+
+
+			if (layout[row][col] == ship[row][col]) {
+
 				
-				// I would like to know what I could do to this line to make it so it doesn't
-				// just read the "[]" I want to read where the previously entered ship is located and I don't know how to read the previous
-				// input instead of just reading what is printed.
+
 				
 				layout[row][col] = shot;
 				count++;
+				
 
 			}
+			
 			else {
 				layout[row][col] = miss;
+				
 			}
 			total++;
-			printGrid(layout);
-			if (count == 3) {
+			printGrid(layout, ship);
+			
+			if (count == 2) {
 				System.out.println("You won!");
 			}
+			
 		}
-
 
 
 
@@ -117,38 +139,38 @@ class FinalProject {
 	public static void ship(String[][] placement) {
 		Scanner input = new Scanner(System.in);
 		int total = 0;
+		String[][] ship = new String[6][6];
 
 		String turn = "[]";
 		System.out.println("First player enter location for a 3X1 ship that is horizontal or vertical only: (all next to each other)");
-		while (total <= 2) {
+
+		for (int row = 0; row < ship.length; row++) {
+			for (int col = 0; col < ship[row].length; col++) {
+
+				while (total <= 2) {
 
 
-			System.out.println("Please enter a row for placement");
 
-			int row = input.nextInt();
+					System.out.println("Please enter a row for placement");
 
-			System.out.println("Please enter a column for placement");
+					row = input.nextInt();
 
-			int col = input.nextInt();
+					System.out.println("Please enter a column for placement");
 
-			placement[row][col] = turn;
+					col = input.nextInt();
+					
+					
 
-			total++;
+					ship[row][col] = turn;
 
-			if(turn.equalsIgnoreCase("[]")) { 
-				
-				// When I change the "[]" to a "0" throughout the program so the ship is actually visible
-				// I can make it so it will read where the ship is and know whether it hit or missed but I need to keep the "[]" so it
-				// blends in with the rest of the matrix.
+					total++;
 
-				turn = "[]";
+					
 
+				}
 			}
-
-
 		}
-		printGrid(placement);
+		printGrid(placement,ship);
 
 	}
-
 }
