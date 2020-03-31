@@ -25,27 +25,7 @@ class FinalProject {
 		String [][] table = new String [6][6];
 		String [][] ship = new String [6][6];
 		int total = 0;
-		/*System.out.println("First player enter location for a 3X1 ship that is horizontal or vertical only: (all next to each other)");
 
-		for (int row = 0; row < ship.length; row++) {
-			for (int col = 0; col < ship[row].length; col++) {
-
-				while (total <= 2) {
-
-
-
-					System.out.println("Please enter a row for placement");
-
-					row = input.nextInt();
-
-					System.out.println("Please enter a column for placement");
-
-					col = input.nextInt();
-					
-					total++;
-				}
-			}
-		}*/
 
 		for (int i = 0; i < table.length; i++) {
 
@@ -110,26 +90,24 @@ class FinalProject {
 
 			if (layout[row][col] == ship[row][col]) {
 
-				
 
-				
 				layout[row][col] = shot;
 				count++;
-				
+
 
 			}
-			
+
 			else {
 				layout[row][col] = miss;
-				
+
 			}
 			total++;
 			printGrid(layout, ship);
-			
+
 			if (count == 2) {
 				System.out.println("You won!");
 			}
-			
+
 		}
 
 
@@ -158,14 +136,14 @@ class FinalProject {
 					System.out.println("Please enter a column for placement");
 
 					col = input.nextInt();
-					
-					
+
+
 
 					ship[row][col] = turn;
 
 					total++;
 
-					
+
 
 				}
 			}
