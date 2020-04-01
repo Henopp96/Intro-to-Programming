@@ -1,3 +1,4 @@
+package FinalProject;
 import java.util.Scanner;
 
 /*
@@ -18,7 +19,9 @@ class FinalProject {
 
 	public static void main(String[] args) {
 
-
+/*
+ * What is happening in the main method is it starts the table and then directly calls to the ship method.
+ */
 
 		Scanner input = new Scanner(System.in);
 
@@ -44,7 +47,9 @@ class FinalProject {
 		ship(table);
 
 	}
-
+/*
+ * This is where the matrix is then printed to be called to the shooter method for the second player to start shooting for the ship.
+ */
 	public static void printGrid(String [][] table, String[][] ship) {
 
 
@@ -61,7 +66,11 @@ class FinalProject {
 
 		shooter(table, ship);
 	}
-
+/*
+ * The shooter method is for after the first player has added where they want the ship. In this method it asks for the second player
+ * to then shoot on the matrix to find the ship. It will either show a "*" if you hit the ship and a "!" if you miss the ship. After 
+ * you have found the whole ship the game will end and tell you that you won.
+ */
 	public static void shooter(String[][] layout, String[][] ship) {
 
 		Scanner input = new Scanner(System.in);
@@ -121,7 +130,10 @@ class FinalProject {
 
 
 	}
-
+/*
+ * What happens in the ship method is it asks the first player to add a 3X1 ship by entering in the row and col of where they
+ * want it located. After it is entered it will then call to go to the printGrid method.
+ */
 	public static void ship(String[][] placement) {
 		Scanner input = new Scanner(System.in);
 		int total = 0;
@@ -132,7 +144,10 @@ class FinalProject {
 
 		for (int row = 0; row < ship.length; row++) {
 			for (int col = 0; col < ship[row].length; col++) {
-
+/*
+ * This while loop is going to keep going until the total has been hit and in this case it is 2 based on the ship size so it can
+ * then go to the printGrid method.
+ */
 				while (total <= 2) {
 
 
@@ -156,6 +171,9 @@ class FinalProject {
 				}
 			}
 		}
+/*
+ * This calls to the printGrid method to show the matrix.
+ */
 		printGrid(placement,ship);
 
 	}
