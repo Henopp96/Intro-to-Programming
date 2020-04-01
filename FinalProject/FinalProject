@@ -75,7 +75,7 @@ class FinalProject {
 
 		String shot = "*";
 
-		while(total < 36) {
+		while(count <= 2) {
 
 
 			System.out.println("Enter a row for shot.");
@@ -88,8 +88,7 @@ class FinalProject {
 
 
 
-			if (layout[row][col] == ship[row][col]) {
-
+			if (layout[row][col].equalsIgnoreCase(ship[row][col])) {
 
 				layout[row][col] = shot;
 				count++;
@@ -102,13 +101,22 @@ class FinalProject {
 
 			}
 			total++;
-			printGrid(layout, ship);
 
-			if (count == 2) {
-				System.out.println("You won!");
+
+			
+			for (row = 0; row < layout.length; row++) {
+
+				for (col = 0; col < layout.length; col++) {
+					System.out.print(layout[row][col] + " ");
+				}
+				System.out.println();
 			}
-
+			if (count == 3) {
+				System.out.println("You won!");
+				
+			}
 		}
+		
 
 
 
