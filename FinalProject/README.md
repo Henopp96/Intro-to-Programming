@@ -6,3 +6,4 @@
     allows the second player to shoot for the ship.
   iii. The program will keep going if the second player doesn't find the ship and will end once they have hit all 3 points where the
     ship is located.
+ 
