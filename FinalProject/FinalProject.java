@@ -1,4 +1,5 @@
-package FinalProject;
+package finalproject_01;
+
 import java.util.Scanner;
 
 /*
@@ -13,7 +14,7 @@ import java.util.Scanner;
 
  */
 
-class FinalProject {
+class FinalProject_01 {
 
 
 
@@ -166,15 +167,21 @@ class FinalProject {
 
 					total++;
 
-
-
+					}
+				if (row != (row + 1) || row != (row - 1) || row != (row + 2) || row != (row - 2) || row != (row + 3) || row != (row - 3) ||
+					col != (col + 1) || col != (col - 1) || col != (col + 2) || col != (col - 2) || col != (col + 3) || col != (col - 3)){
+					printGrid(placement, ship);
 				}
-			}
+				
+					
+				}
+			
 		}
 /*
  * This calls to the printGrid method to show the matrix.
  */
-		printGrid(placement,ship);
+		//printGrid(placement,ship);
 
 	}
 }
+
